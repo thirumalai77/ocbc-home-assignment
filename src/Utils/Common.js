@@ -20,3 +20,14 @@ export const setUserSession = (token,userDetails) => {
     sessionStorage.setItem('authorizationToken',token);
     sessionStorage.setItem('userInfo',JSON.stringify(userDetails));
 }
+
+//Formatting date
+export const formatDate = (date) => {
+    return new Date(date).toLocaleDateString('de-DE', { day: 'numeric', year:"numeric", month:"short"}).
+    split('.').join(' ');
+}
+
+  //format number
+export const formatNumber = (number) => {
+    return number.toLocaleString('en-US', {minimumFractionDigits:2})
+}
