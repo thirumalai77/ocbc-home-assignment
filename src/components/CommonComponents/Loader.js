@@ -6,6 +6,7 @@ function Loader(props) {
   return (
     <div>
       <Backdrop
+        style={{zIndex:1}}
         sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={props.open}
       >

@@ -44,7 +44,7 @@ function LoginScreen(props){
       setIsLoading(true);
       axios.post('https://green-thumb-64168.uc.r.appspot.com/login',
         {"username":userName,"password":password}).then((res)=>{
-          setUserSession(res.data.token,res.data);
+          setUserSession(res.data.token,res.data.username);
           setError("");
           setIsLoading(false);
           history.push('/dashboard');
@@ -72,7 +72,7 @@ function LoginScreen(props){
             </Button>
         </Grid>
         <Grid className={classes.paper}>
-            <Button className={classes.button} variant="outlined" onClick={()=> history.push('/register') } >
+            <Button className={classes.button} style={{backgroundColor:'#fff'}} variant="outlined" onClick={()=> history.push('/register') } >
                  Register
             </Button>
         </Grid>

@@ -9,7 +9,7 @@ function Router(props){
     return(
         <>
          <BrowserRouter>
-            <div className='body-content'>
+            <div className='body-content' style={{backgroundColor:'#F5F5F5',minHeight:740}}>
             <Header />   
             <Switch>
                 <PublicRoute path="/" exact component={Login} />
