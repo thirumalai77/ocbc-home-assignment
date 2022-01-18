@@ -4,6 +4,7 @@ import Register from './Register';
 import PublicRoute from '../Utils/PublicRoute';
 import PrivateRoute from '../Utils/PrivateRoute';
 import Dashboard from './TransactionHistory';
+import Transfer from './Transfer';
 import Header from './Header';
 function Router(props){
     return(
@@ -15,6 +16,7 @@ function Router(props){
                 <PublicRoute path="/" exact component={Login} />
                 <PublicRoute path="/register"  component={Register} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
+                <PrivateRoute path="/transfer" component={Transfer} />
             </Switch>
             </div>  
         </BrowserRouter>
