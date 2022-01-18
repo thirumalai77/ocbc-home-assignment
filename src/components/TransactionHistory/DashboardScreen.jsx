@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import { getToken,formatDate,formatNumber } from '../../Utils/Common';
 import Loader from '../CommonComponents/Loader';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme)=>({
     transactionContainer: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme)=>({
         borderRadius: '0 20px 20px 0',
         textAlign: 'left',
         padding: 15,
+        paddingTop: 1,
         boxShadow: '2px 2px 10px #ccc',
         fontSize:16
       },
@@ -85,6 +87,7 @@ const useStyles = makeStyles((theme)=>({
 
 function DashboardScreen(props){
 const classes = useStyles();  
+const history = useHistory();
 const [transactionDetails,setTransactionDetails] = useState([]);    
 const [isLoading,setIsLoading] = useState(false);
 const [balance,setBalance] = useState('');
@@ -189,8 +192,8 @@ return (
             <p className={classes.transactionTitle}>{'Your Transaction History'}</p>
             {renderTransactionDetails()}
             <Grid className={classes.paper}>
-            <Button style={{backgroundColor: '#000',color:'#fff'}} 
-            className={classes.button} variant="outlined" type="button">
+            <Button onClick={() => history.replace('/transfer') } style={{backgroundColor: '#000',color:'#fff'}} 
+             className={classes.button} variant="outlined" type="button">
                  Make Transfer
             </Button>
         </Grid>
